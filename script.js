@@ -18,7 +18,25 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-  console.log(humanChoice, computerChoice);
+  if (humanChoice == computerChoice) {
+    console.log('Tie! No one wins.');
+  } else if (
+    (humanChoice == 'Rock' && computerChoice == 'Scissors') ||
+    (humanChoice == 'Paper' && computerChoice == 'Rock') ||
+    (humanChoice == 'Scissors' && computerChoice == 'Paper')
+  ) {
+    console.log('You Win!');
+    humanScore++;
+  } else if (
+    (humanChoice == 'Rock' && computerChoice == 'Paper') ||
+    (humanChoice == 'Paper' && computerChoice == 'Scissors') ||
+    (humanChoice == 'Scissors' && computerChoice == 'Rock')
+  ) {
+    console.log('You Lose!');
+    computerScore++;
+  }
+  console.log('Score: Human: ' + humanScore + ' // Computer: ' + computerScore);
+  console.log('Human: ' + humanChoice, 'Computer:' + computerChoice);
 }
 
-playRound(getComputerChoice(), getHumanChoice());
+playRound(getHumanChoice(), getComputerChoice());

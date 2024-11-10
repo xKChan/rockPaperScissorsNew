@@ -27,18 +27,17 @@ function playRound(humanChoice, computerChoice) {
     (humanChoice == 'Paper' && computerChoice == 'Rock') ||
     (humanChoice == 'Scissors' && computerChoice == 'Paper')
   ) {
-    console.log('You Win!');
+    console.log('You Win! ' + humanChoice + ' beats ' + computerChoice);
     humanScore++;
   } else if (
     (humanChoice == 'Rock' && computerChoice == 'Paper') ||
     (humanChoice == 'Paper' && computerChoice == 'Scissors') ||
     (humanChoice == 'Scissors' && computerChoice == 'Rock')
   ) {
-    console.log('You Lose!');
+    console.log('You Lose! ' + humanChoice + ' loses to ' + computerChoice);
     computerScore++;
   }
   console.log('Score: Human: ' + humanScore + ' // Computer: ' + computerScore);
-  console.log('Human: ' + humanChoice, 'Computer:' + computerChoice);
 }
 
 playRound(getHumanChoice(), getComputerChoice());

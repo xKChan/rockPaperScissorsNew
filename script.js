@@ -40,4 +40,36 @@ function playRound(humanChoice, computerChoice) {
   console.log('Score: Human: ' + humanScore + ' // Computer: ' + computerScore);
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+  }
+  if (humanScore > computerScore) {
+    console.log(
+      'Congrats! You Win !! // Player Score: ' +
+        humanScore +
+        ' Computer Score: ' +
+        computerScore
+    );
+  } else if (humanScore < computerScore) {
+    console.log(
+      'Boo! You Lose !! // Player Score: ' +
+        humanScore +
+        ' Computer Score: ' +
+        computerScore
+    );
+  } else {
+    console.log(
+      'Tie Game! No one wins // Player Score: ' +
+        humanScore +
+        ' Computer Score: ' +
+        computerScore
+    );
+  }
+  return;
+}
+
+playGame();
+// playRound(humanSelection, computerSelection);
